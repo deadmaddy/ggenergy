@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Question!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            color: #d81b60;
+            margin-bottom: 40px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            width: 300px;
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.1s ease;
+        }
+        #yes-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+        #no-btn {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Do you think I am the coolest person ever? 😎</h1>
+
+    <div class="buttons">
+        <button id="yes-btn" onclick="alert('Yay! I knew it! 🎉')">YES</button>
+        <button id="no-btn" onmouseover="moveButton()" onclick="moveButton()">NO</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noBtn = document.getElementById('no-btn');
+            // Calculate random new positions within the window bounds
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 100);
+            
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+    </script>
+
+</body>
+</html>
